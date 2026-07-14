@@ -1,0 +1,66 @@
+name: PNU CSE Notice Bot
+
+on:
+  workflow_dispatch:
+    inputs:
+      send_preview:
+        description: "최신 공지를 Discord 미리보기로 보내기"
+        required: false
+        type: boolean
+        default: false
+  schedule:
+    # 매시 7분, 37분에 실행: 30분 간격
+    # 정각 부하를 피하기 위해 0분/30분이 아닌 시간을 사용합니다.
+    - cron: "7,37 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pnu-cse-notice-bot
+  cancel-in-progress: false
+
+jobs:
+  check-notices:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 저장소 파일 가져오기
+        uses: actions/checkout@v4
+
+      - name: Python 설치
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+
+      - name: 필요한 패키지 설치
+        run: python -m pip install -r requirements.txt
+
+      - name: Discord 연결 미리보기
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.send_preview }}
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          PYTHONUTF8: "1"
+        run: python preview_latest.py --discord
+
+      - name: 새 공지 확인 및 Discord 전송
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          SEND_LOW_RELEVANCE: "false"
+          PYTHONUTF8: "1"
+        run: python main.py
+
+      - name: 확인한 공지 기록 저장
+        run: |
+          git add seen_notices.json
+
+          if git diff --cached --quiet; then
+            echo "seen_notices.json 변경 없음"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update seen notices [skip ci]"
+          git push

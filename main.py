@@ -463,9 +463,11 @@ def send_discord_notice(
     response = requests.post(
         webhook_url,
         json={
-            "content": f"{heading} · 정보컴퓨터공학부",
+            # 혼자 쓰는 서버에서 휴대폰 푸시가 더 확실히 울리도록
+            # @everyone 멘션을 포함합니다.
+            "content": f"@everyone {heading} · 정보컴퓨터공학부",
             "username": "PNU CSE 공지봇",
-            "allowed_mentions": {"parse": []},
+            "allowed_mentions": {"parse": ["everyone"]},
             "embeds": [embed],
         },
         timeout=15,

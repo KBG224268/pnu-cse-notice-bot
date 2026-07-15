@@ -1,4 +1,4 @@
-const CACHE_NAME = "pnu-cse-notice-v1";
+const CACHE_NAME = "pnu-cse-notice-v2";
 const APP_SHELL = [
   "./",
   "./index.html",

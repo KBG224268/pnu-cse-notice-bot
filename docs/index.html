@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-theme="auto">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#124b8c">
+  <meta name="theme-color" content="#0d3d73">
   <meta name="description" content="부산대학교 정보컴퓨터공학부 1학년 맞춤 공지 모음">
   <title>PNU CSE 1학년 공지</title>
   <link rel="manifest" href="./manifest.webmanifest">
@@ -14,123 +14,216 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="./" aria-label="홈으로 이동">
+      <a class="brand" href="./" aria-label="PNU CSE 공지 홈">
         <span class="brand-mark" aria-hidden="true">P</span>
-        <span>
+        <span class="brand-copy">
           <strong>PNU CSE Notice</strong>
-          <small>정보컴퓨터공학부 1학년 맞춤</small>
+          <small>정보컴퓨터공학부 · 1학년</small>
         </span>
       </a>
-      <button id="installButton" class="ghost-button" type="button" hidden>앱 설치</button>
+      <div class="header-actions">
+        <button id="themeButton" class="icon-button" type="button" aria-label="화면 테마 변경" title="화면 테마 변경">
+          <svg class="sun-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+          <svg class="moon-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 14.4A8 8 0 0 1 9.6 3.5 8.5 8.5 0 1 0 20.5 14.4Z"/></svg>
+        </button>
+        <button id="installButton" class="install-button" type="button" hidden>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 18v2h14v-2"/></svg>
+          <span>앱 설치</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main class="page-shell">
-    <section class="hero" aria-labelledby="heroTitle">
-      <div>
-        <p class="eyebrow">매번 홈페이지에 들어가지 않아도</p>
-        <h1 id="heroTitle">나에게 필요한 공지만<br>빠르게 확인하세요.</h1>
-        <p class="hero-description">
-          정보컴퓨터공학부 공지를 자동으로 읽고 1학년 관련도, 대상, 해야 할 일과 마감 정보를 정리합니다.
-        </p>
-      </div>
-      <div class="hero-status" aria-live="polite">
-        <span class="status-dot"></span>
-        <span id="syncStatus">공지 데이터를 불러오는 중…</span>
-      </div>
+    <section class="dashboard" aria-labelledby="dashboardTitle">
+      <article class="hero-card">
+        <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="hero-topline">
+            <span class="live-badge"><i></i> 30분마다 자동 확인</span>
+            <span id="syncStatus" class="sync-status" aria-live="polite">데이터 불러오는 중</span>
+          </div>
+          <p class="eyebrow eyebrow-light">FOR PNU CSE FRESHMEN</p>
+          <h1 id="dashboardTitle">놓치면 안 되는 공지를<br>한곳에서 확인하세요.</h1>
+          <p class="hero-description">공지 대상, 해야 할 일, 마감까지 1학년 관점으로 정리합니다.</p>
+        </div>
+      </article>
+
+      <article id="spotlightCard" class="spotlight-card" aria-labelledby="spotlightTitle">
+        <div class="spotlight-heading">
+          <div>
+            <p class="eyebrow">CHECK THIS FIRST</p>
+            <h2 id="spotlightTitle">지금 확인할 공지</h2>
+          </div>
+          <span id="spotlightDeadline" class="deadline-pill neutral">선정 중</span>
+        </div>
+        <p id="spotlightCategory" class="category-label">중요 공지</p>
+        <h3 id="spotlightNoticeTitle">공지 데이터를 불러오고 있어요.</h3>
+        <p id="spotlightSummary" class="spotlight-summary">잠시만 기다려 주세요.</p>
+        <a id="spotlightLink" class="spotlight-link" href="#noticeFeed">
+          공지 목록 보기
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </article>
     </section>
 
     <section class="stats" aria-label="공지 현황">
       <article class="stat-card">
-        <span>전체 공지</span>
-        <strong id="totalCount">-</strong>
-      </article>
-      <article class="stat-card important">
-        <span>관련도 높음</span>
-        <strong id="highCount">-</strong>
+        <span class="stat-icon blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6V3Z"/><path d="M14 3v4h4M9 11h6M9 15h6"/></svg>
+        </span>
+        <div><span>전체 공지</span><strong id="totalCount">-</strong></div>
       </article>
       <article class="stat-card">
-        <span>아직 안 읽음</span>
-        <strong id="unreadCount">-</strong>
+        <span class="stat-icon red" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3 2.8 19h18.4L12 3Z"/><path d="M12 9v4m0 3h.01"/></svg>
+        </span>
+        <div><span>중요 공지</span><strong id="highCount">-</strong></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon violet" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="m8 13 2.5 2.5L16 10"/></svg>
+        </span>
+        <div><span>안 읽은 공지</span><strong id="unreadCount">-</strong></div>
+      </article>
+      <article class="stat-card desktop-only">
+        <span class="stat-icon amber" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </span>
+        <div><span>마감 있는 공지</span><strong id="deadlineCount">-</strong></div>
       </article>
     </section>
 
-    <section class="controls" aria-label="공지 검색과 필터">
-      <label class="search-box">
-        <span class="sr-only">공지 검색</span>
-        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
-        <input id="searchInput" type="search" placeholder="수강신청, 장학, 신입생 검색">
-      </label>
-      <div class="filter-row" role="group" aria-label="관련도 필터">
-        <button class="filter-button active" type="button" data-filter="all">전체</button>
-        <button class="filter-button" type="button" data-filter="높음">중요</button>
-        <button class="filter-button" type="button" data-filter="보통">일반</button>
-        <button class="filter-button" type="button" data-filter="saved">저장됨</button>
-      </div>
-    </section>
-
-    <section aria-labelledby="noticeListTitle">
+    <section id="noticeFeed" class="feed-section" aria-labelledby="noticeListTitle">
       <div class="section-heading">
         <div>
           <p class="eyebrow">NOTICE FEED</p>
           <h2 id="noticeListTitle">최신 공지</h2>
+          <p id="resultSummary" class="result-summary">공지를 정리하고 있어요.</p>
         </div>
-        <button id="refreshButton" class="text-button" type="button">새로고침</button>
+        <button id="refreshButton" class="refresh-button" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>
+          새로고침
+        </button>
+      </div>
+
+      <div class="control-panel">
+        <label class="search-box">
+          <span class="sr-only">공지 검색</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="searchInput" type="search" placeholder="수강신청, 장학, 신입생 검색" autocomplete="off">
+          <button id="clearSearchButton" class="clear-search" type="button" aria-label="검색어 지우기" hidden>×</button>
+        </label>
+        <label class="sort-control">
+          <span>정렬</span>
+          <select id="sortSelect" aria-label="공지 정렬">
+            <option value="latest">최신순</option>
+            <option value="priority">중요순</option>
+            <option value="deadline">마감순</option>
+          </select>
+        </label>
+        <div class="filter-row" role="group" aria-label="공지 필터">
+          <button class="filter-button active" type="button" data-filter="all">전체</button>
+          <button class="filter-button" type="button" data-filter="높음">중요</button>
+          <button class="filter-button" type="button" data-filter="deadline">마감 있음</button>
+          <button class="filter-button" type="button" data-filter="saved">저장</button>
+          <button class="filter-button" type="button" data-filter="unread">안 읽음</button>
+        </div>
       </div>
 
       <div id="noticeList" class="notice-list" aria-live="polite"></div>
 
       <div id="emptyState" class="empty-state" hidden>
-        <div aria-hidden="true">📭</div>
+        <span class="empty-icon" aria-hidden="true">⌕</span>
         <h3>조건에 맞는 공지가 없어요.</h3>
         <p>검색어를 지우거나 다른 필터를 선택해 보세요.</p>
+        <button id="resetFiltersButton" class="secondary-button" type="button">필터 초기화</button>
       </div>
 
       <div id="errorState" class="empty-state" hidden>
-        <div aria-hidden="true">⚠️</div>
+        <span class="empty-icon" aria-hidden="true">!</span>
         <h3>공지 데이터를 불러오지 못했어요.</h3>
-        <p>잠시 후 새로고침해 주세요.</p>
+        <p>인터넷 연결을 확인한 뒤 다시 시도해 주세요.</p>
+        <button id="retryButton" class="primary-button" type="button">다시 시도</button>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>부산대학교 공식 서비스가 아닌 학생 개인 프로젝트입니다.</p>
+    <div>
+      <strong>PNU CSE Notice</strong>
+      <p>부산대학교 공식 서비스가 아닌 학생 개인 프로젝트입니다.</p>
+    </div>
     <p>자동 분석은 틀릴 수 있으므로 중요한 내용은 반드시 원문을 확인하세요.</p>
   </footer>
 
+  <nav class="mobile-nav" aria-label="모바일 빠른 메뉴">
+    <button class="mobile-nav-button active" type="button" data-mobile-filter="all">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9H4v-9Z"/><path d="M9 20v-6h6v6"/></svg>
+      <span>전체</span>
+    </button>
+    <button class="mobile-nav-button" type="button" data-mobile-filter="높음">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 2.8 19h18.4L12 3Z"/><path d="M12 9v4m0 3h.01"/></svg>
+      <span>중요</span>
+    </button>
+    <button class="mobile-nav-button" type="button" data-mobile-filter="saved">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 4.8A1.8 1.8 0 0 1 7.8 3h8.4A1.8 1.8 0 0 1 18 4.8V21l-6-3.75L6 21V4.8Z"/></svg>
+      <span>저장</span>
+    </button>
+    <button id="mobileSearchButton" class="mobile-nav-button" type="button">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <span>검색</span>
+    </button>
+  </nav>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
   <template id="noticeTemplate">
     <article class="notice-card">
+      <div class="notice-accent" aria-hidden="true"></div>
       <div class="notice-card-top">
         <div class="notice-meta">
+          <span class="category-badge"></span>
           <span class="relevance-badge"></span>
           <time class="published-date"></time>
-          <span class="unread-dot" title="읽지 않은 공지">NEW</span>
+          <span class="unread-dot">NEW</span>
         </div>
         <button class="save-button" type="button" aria-label="공지 저장" title="공지 저장">
           <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 4.8A1.8 1.8 0 0 1 7.8 3h8.4A1.8 1.8 0 0 1 18 4.8V21l-6-3.75L6 21V4.8Z"/></svg>
         </button>
       </div>
-      <h3 class="notice-title"></h3>
+
+      <div class="title-row">
+        <h3 class="notice-title"></h3>
+        <span class="card-deadline-badge neutral"></span>
+      </div>
       <p class="notice-summary"></p>
+
       <dl class="detail-grid">
         <div>
-          <dt>대상</dt>
+          <dt><span aria-hidden="true">👤</span> 대상</dt>
           <dd class="notice-target"></dd>
         </div>
         <div>
-          <dt>해야 할 일</dt>
+          <dt><span aria-hidden="true">✓</span> 해야 할 일</dt>
           <dd class="notice-action"></dd>
         </div>
-        <div>
-          <dt>마감·일정</dt>
+        <div class="deadline-detail">
+          <dt><span aria-hidden="true">◷</span> 마감·일정</dt>
           <dd class="notice-deadline"></dd>
         </div>
       </dl>
-      <p class="notice-reason"></p>
-      <div class="notice-actions">
-        <button class="read-button secondary-button" type="button">읽음 처리</button>
-        <a class="original-link primary-button" target="_blank" rel="noopener noreferrer">원문 보기</a>
+
+      <div class="notice-footer">
+        <p class="notice-reason"></p>
+        <div class="notice-actions">
+          <button class="read-button secondary-button" type="button">읽음 처리</button>
+          <a class="original-link primary-button" target="_blank" rel="noopener noreferrer">
+            원문 보기
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 5h5v5M19 5l-9 9"/><path d="M17 13v6H5V7h6"/></svg>
+          </a>
+        </div>
       </div>
     </article>
   </template>

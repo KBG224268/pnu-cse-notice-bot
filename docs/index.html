@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#124b8c">
+  <meta name="description" content="부산대학교 정보컴퓨터공학부 1학년 맞춤 공지 모음">
+  <title>PNU CSE 1학년 공지</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon-192.png">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="홈으로 이동">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span>
+          <strong>PNU CSE Notice</strong>
+          <small>정보컴퓨터공학부 1학년 맞춤</small>
+        </span>
+      </a>
+      <button id="installButton" class="ghost-button" type="button" hidden>앱 설치</button>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div>
+        <p class="eyebrow">매번 홈페이지에 들어가지 않아도</p>
+        <h1 id="heroTitle">나에게 필요한 공지만<br>빠르게 확인하세요.</h1>
+        <p class="hero-description">
+          정보컴퓨터공학부 공지를 자동으로 읽고 1학년 관련도, 대상, 해야 할 일과 마감 정보를 정리합니다.
+        </p>
+      </div>
+      <div class="hero-status" aria-live="polite">
+        <span class="status-dot"></span>
+        <span id="syncStatus">공지 데이터를 불러오는 중…</span>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="공지 현황">
+      <article class="stat-card">
+        <span>전체 공지</span>
+        <strong id="totalCount">-</strong>
+      </article>
+      <article class="stat-card important">
+        <span>관련도 높음</span>
+        <strong id="highCount">-</strong>
+      </article>
+      <article class="stat-card">
+        <span>아직 안 읽음</span>
+        <strong id="unreadCount">-</strong>
+      </article>
+    </section>
+
+    <section class="controls" aria-label="공지 검색과 필터">
+      <label class="search-box">
+        <span class="sr-only">공지 검색</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+        <input id="searchInput" type="search" placeholder="수강신청, 장학, 신입생 검색">
+      </label>
+      <div class="filter-row" role="group" aria-label="관련도 필터">
+        <button class="filter-button active" type="button" data-filter="all">전체</button>
+        <button class="filter-button" type="button" data-filter="높음">중요</button>
+        <button class="filter-button" type="button" data-filter="보통">일반</button>
+        <button class="filter-button" type="button" data-filter="saved">저장됨</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="noticeListTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">NOTICE FEED</p>
+          <h2 id="noticeListTitle">최신 공지</h2>
+        </div>
+        <button id="refreshButton" class="text-button" type="button">새로고침</button>
+      </div>
+
+      <div id="noticeList" class="notice-list" aria-live="polite"></div>
+
+      <div id="emptyState" class="empty-state" hidden>
+        <div aria-hidden="true">📭</div>
+        <h3>조건에 맞는 공지가 없어요.</h3>
+        <p>검색어를 지우거나 다른 필터를 선택해 보세요.</p>
+      </div>
+
+      <div id="errorState" class="empty-state" hidden>
+        <div aria-hidden="true">⚠️</div>
+        <h3>공지 데이터를 불러오지 못했어요.</h3>
+        <p>잠시 후 새로고침해 주세요.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>부산대학교 공식 서비스가 아닌 학생 개인 프로젝트입니다.</p>
+    <p>자동 분석은 틀릴 수 있으므로 중요한 내용은 반드시 원문을 확인하세요.</p>
+  </footer>
+
+  <template id="noticeTemplate">
+    <article class="notice-card">
+      <div class="notice-card-top">
+        <div class="notice-meta">
+          <span class="relevance-badge"></span>
+          <time class="published-date"></time>
+          <span class="unread-dot" title="읽지 않은 공지">NEW</span>
+        </div>
+        <button class="save-button" type="button" aria-label="공지 저장" title="공지 저장">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 4.8A1.8 1.8 0 0 1 7.8 3h8.4A1.8 1.8 0 0 1 18 4.8V21l-6-3.75L6 21V4.8Z"/></svg>
+        </button>
+      </div>
+      <h3 class="notice-title"></h3>
+      <p class="notice-summary"></p>
+      <dl class="detail-grid">
+        <div>
+          <dt>대상</dt>
+          <dd class="notice-target"></dd>
+        </div>
+        <div>
+          <dt>해야 할 일</dt>
+          <dd class="notice-action"></dd>
+        </div>
+        <div>
+          <dt>마감·일정</dt>
+          <dd class="notice-deadline"></dd>
+        </div>
+      </dl>
+      <p class="notice-reason"></p>
+      <div class="notice-actions">
+        <button class="read-button secondary-button" type="button">읽음 처리</button>
+        <a class="original-link primary-button" target="_blank" rel="noopener noreferrer">원문 보기</a>
+      </div>
+    </article>
+  </template>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>

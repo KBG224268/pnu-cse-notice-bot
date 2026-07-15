@@ -18,6 +18,7 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent
 SEEN_FILE = BASE_DIR / "seen_notices.json"
+WEB_DATA_FILE = BASE_DIR / "docs" / "notices.json"
 ENV_FILE = BASE_DIR / ".env"
 RSS_URL = "https://cse.pusan.ac.kr/bbs/cse/2055/rssList.do?row=50"
 USER_AGENT = "PNU-CSE-Notice-Prototype/0.4 (personal study project)"
@@ -200,6 +201,52 @@ def load_seen_ids() -> set[str]:
 def save_seen_ids(seen_ids: set[str]) -> None:
     SEEN_FILE.write_text(
         json.dumps(sorted(seen_ids), ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+
+def load_web_notices() -> list[dict[str, Any]]:
+    if not WEB_DATA_FILE.exists():
+        return []
+    try:
+        data = json.loads(WEB_DATA_FILE.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        print("[경고] 웹 공지 데이터 파일을 읽지 못해 새로 만듭니다.")
+        return []
+    return data if isinstance(data, list) else []
+
+
+def notice_to_web_record(
+    notice: dict[str, str],
+    analysis: Analysis,
+) -> dict[str, Any]:
+    return {
+        "id": notice["id"],
+        "title": notice["title"],
+        "link": notice["link"],
+        "published_at": notice["date"],
+        "relevance": analysis.relevance,
+        "reason": analysis.reason,
+        "target": analysis.target,
+        "action": analysis.action,
+        "deadline": analysis.deadline,
+        "summary": analysis.summary,
+        "body_loaded": analysis.body_loaded,
+    }
+
+
+def upsert_web_notice(
+    records: list[dict[str, Any]],
+    record: dict[str, Any],
+) -> list[dict[str, Any]]:
+    filtered = [item for item in records if item.get("id") != record.get("id")]
+    return [record, *filtered][:100]
+
+
+def save_web_notices(records: list[dict[str, Any]]) -> None:
+    WEB_DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
+    WEB_DATA_FILE.write_text(
+        json.dumps(records, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
@@ -525,11 +572,16 @@ def main() -> None:
     processed_ids: set[str] = set()
     sent_count = 0
     webhook_url: str | None = None
+    web_records = load_web_notices()
 
     for notice in new_notices:
         print(f"\n- {notice['title']}")
         analysis = analyze_notice(notice)
         print_analysis(analysis)
+        web_records = upsert_web_notice(
+            web_records,
+            notice_to_web_record(notice, analysis),
+        )
 
         if analysis.relevance == "낮음" and not send_low:
             print("  Discord 전송 생략: 1학년 관련도가 낮음")
@@ -549,6 +601,7 @@ def main() -> None:
         print("  Discord 전송 성공!")
 
     save_seen_ids(seen_ids | processed_ids)
+    save_web_notices(web_records)
     print(
         f"\n처리 완료: {len(processed_ids)}/{len(new_notices)}개, "
         f"Discord 전송 {sent_count}개"

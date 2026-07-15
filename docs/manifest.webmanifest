@@ -1,0 +1,22 @@
+{
+  "name": "PNU CSE 1학년 공지",
+  "short_name": "PNU 공지",
+  "description": "부산대학교 정보컴퓨터공학부 1학년 맞춤 공지 모음",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fa",
+  "theme_color": "#123f73",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

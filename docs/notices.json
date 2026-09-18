@@ -1,5 +1,18 @@
 [
   {
+    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1463569/artclView.do?layout=unknown",
+    "title": "강의실 예약 방법 알림}",
+    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1463569/artclView.do?layout=unknown",
+    "published_at": "2026-09-18 18:03:33.37",
+    "relevance": "보통",
+    "reason": "학부생 공통 가능성: 행사",
+    "target": "본문에서 명확히 찾지 못함",
+    "action": "* 예약시스템 사용 개시: 2026. 9. 18(금)부터 (단, 금일까지 신청한 내역은 예약시스템에 기입력되어 있으니 확인할 것)",
+    "deadline": "* 예약시스템 사용 개시: 2026. 9. 18(금)부터 (단, 금일까지 신청한 내역은 예약시스템에 기입력되어 있으니 확인할 것)",
+    "summary": "* 예약시스템 사용 개시: 2026. 9. 18(금)부터 (단, 금일까지 신청한 내역은 예약시스템에 기입력되어 있으니 확인할 것)",
+    "body_loaded": true
+  },
+  {
     "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1463475/artclView.do?layout=unknown",
     "title": "[학생과] 2026학년도 제39기 부산대학교 산학협력 해외봉사단 참가 신청 안내(~9/29)}",
     "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1463475/artclView.do?layout=unknown",
@@ -1284,19 +1297,6 @@
     "action": "담당자 이메일 제출",
     "deadline": "본문에서 명확히 찾지 못함",
     "summary": "담당자 이메일 제출",
-    "body_loaded": true
-  },
-  {
-    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1448291/artclView.do?layout=unknown",
-    "title": "2026학년도 2학기 대학생활원(부산) 비원생 모집요강 공고}",
-    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1448291/artclView.do?layout=unknown",
-    "published_at": "2026-07-08 09:48:14.543",
-    "relevance": "보통",
-    "reason": "학부생 공통 가능성: 모집",
-    "target": "본문에서 명확히 찾지 못함",
-    "action": "원문 확인 필요",
-    "deadline": "본문에서 명확히 찾지 못함",
-    "summary": "fnctId=bbs,fnctNo=2055",
     "body_loaded": true
   }
 ]

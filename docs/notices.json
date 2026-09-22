@@ -1,5 +1,31 @@
 [
   {
+    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1463889/artclView.do?layout=unknown",
+    "title": "2026-2학기 교양교육원 비교과프로그램 「디지털문화와인간」특강 안내}",
+    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1463889/artclView.do?layout=unknown",
+    "published_at": "2026-09-22 16:13:09.257",
+    "relevance": "보통",
+    "reason": "학부생 공통 가능성: 학부생, 특강",
+    "target": "수강대상",
+    "action": "기간 내 신청 시 자동 등록 및 수강 가능",
+    "deadline": "본문에서 명확히 찾지 못함",
+    "summary": "기간 내 신청 시 자동 등록 및 수강 가능",
+    "body_loaded": true
+  },
+  {
+    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1463857/artclView.do?layout=unknown",
+    "title": "2027학년도 경제통상대학 국제학부 복수전공(GSP) 이수자 선발 안내}",
+    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1463857/artclView.do?layout=unknown",
+    "published_at": "2026-09-22 15:00:53.96",
+    "relevance": "높음",
+    "reason": "학사·수업 핵심 표현: 시험, 성적",
+    "target": "신청자격",
+    "action": "인터넷 접수 및 서류제출",
+    "deadline": "본문에서 명확히 찾지 못함",
+    "summary": "인터넷 접수 및 서류제출",
+    "body_loaded": true
+  },
+  {
     "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1463821/artclView.do?layout=unknown",
     "title": "[대학일자리] 금정구 지역청년 대상 자기소개서 완성 실전반 신청 안내(~10/19)}",
     "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1463821/artclView.do?layout=unknown",
@@ -1271,32 +1297,6 @@
     "action": "* 현재 모집은 마감되었으나 인턴십 참여학생은 수강가능",
     "deadline": "본문에서 명확히 찾지 못함",
     "summary": "* 현재 모집은 마감되었으나 인턴십 참여학생은 수강가능",
-    "body_loaded": true
-  },
-  {
-    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1448426/artclView.do?layout=unknown",
-    "title": "[AI융합교육원] AI Builder Sprint 2026 모집 안내}",
-    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1448426/artclView.do?layout=unknown",
-    "published_at": "2026-07-08 16:18:01.47",
-    "relevance": "보통",
-    "reason": "학부생 공통 가능성: 학부생, 재학생, 모집",
-    "target": "참가 대상",
-    "action": "을 개최하오니 학생들의 많은 참여 바랍니다",
-    "deadline": "본문에서 명확히 찾지 못함",
-    "summary": "을 개최하오니 학생들의 많은 참여 바랍니다",
-    "body_loaded": true
-  },
-  {
-    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1448319/artclView.do?layout=unknown",
-    "title": "[BK21] BK21 대학원혁신 우수 학부연구생 지원 사업 신청 안내(~7/10 11시)}",
-    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1448319/artclView.do?layout=unknown",
-    "published_at": "2026-07-08 10:25:24.553",
-    "relevance": "높음",
-    "reason": "학사·수업 핵심 표현: 성적, 장학",
-    "target": "우수 학부생에게 조기 연구경험을 제공하여 대학원 진학 유인을 높이고",
-    "action": "신청 서류 원본 제출",
-    "deadline": "[BK21] BK21 대학원혁신 우수 학부연구생 지원 사업 신청 안내(~7/10 11시)",
-    "summary": "신청 서류 원본 제출 / [BK21] BK21 대학원혁신 우수 학부연구생 지원 사업 신청 안내(~7/10 11시)",
     "body_loaded": true
   }
 ]

@@ -1,5 +1,18 @@
 [
   {
+    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1466610/artclView.do?layout=unknown",
+    "title": "[학생과] 2026 제39기 부산대학교 산학협력 해외봉사단 참가자 추가 모집 안내(~10/25)}",
+    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1466610/artclView.do?layout=unknown",
+    "published_at": "2026-10-13 10:21:16.137",
+    "relevance": "보통",
+    "reason": "학부생 공통 가능성: 학부생, 모집",
+    "target": "지원자격",
+    "action": "학생신청 시 학과장 온라인 승인 필수사항이므로 학과에 신청 내역을 알리기 바랍니다(정예랑조교, 051-510-1548)",
+    "deadline": "학생신청 시 학과장 온라인 승인 필수사항이므로 학과에 신청 내역을 알리기 바랍니다(정예랑조교, 051-510-1548)",
+    "summary": "학생신청 시 학과장 온라인 승인 필수사항이므로 학과에 신청 내역을 알리기 바랍니다(정예랑조교, 051-510-1548)",
+    "body_loaded": true
+  },
+  {
     "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1466552/artclView.do?layout=unknown",
     "title": "[장학] 2026학년도 남안장학생 추천: ~ 10/16(금) 오전 10시까지}",
     "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1466552/artclView.do?layout=unknown",
@@ -1284,19 +1297,6 @@
     "action": "현장실습 참여학생 신청",
     "deadline": "26. 8. 19(수) 까지**",
     "summary": "현장실습 참여학생 신청 / 26. 8. 19(수) 까지**",
-    "body_loaded": true
-  },
-  {
-    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1453007/artclView.do?layout=unknown",
-    "title": "[수업][필독:중요]2026학년도 2학기 정보컴퓨터공학부 수강지도}",
-    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1453007/artclView.do?layout=unknown",
-    "published_at": "2026-07-29 21:55:54.18",
-    "relevance": "높음",
-    "reason": "학사·수업 핵심 표현: 수강신청, 수강정정, 수강취소",
-    "target": "수강대상 학과",
-    "action": "담당교수님께 승인받아 학과에 제출하고 수강신청 할 것",
-    "deadline": "본문에서 명확히 찾지 못함",
-    "summary": "담당교수님께 승인받아 학과에 제출하고 수강신청 할 것",
     "body_loaded": true
   }
 ]

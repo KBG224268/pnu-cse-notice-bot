@@ -1,5 +1,18 @@
 [
   {
+    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1467515/artclView.do?layout=unknown",
+    "title": "[재학생맞춤형고용서비스] 재학생 기업탐방 프로그램(캠코 본사) 신청 안내}",
+    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1467515/artclView.do?layout=unknown",
+    "published_at": "2026-10-20 10:25:08.17",
+    "relevance": "낮음",
+    "reason": "1학년이 아닌 특정 대상만 명시된 공지",
+    "target": "[재학생맞춤형고용서비스] 재학생 기업탐방 프로그램(캠코 본사) 신청 안내",
+    "action": "관심있는 학생들이 참여할 수 있도록 학과 게시판",
+    "deadline": "본문에서 명확히 찾지 못함",
+    "summary": "관심있는 학생들이 참여할 수 있도록 학과 게시판",
+    "body_loaded": true
+  },
+  {
     "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1467403/artclView.do?layout=unknown",
     "title": "[국립대육성] 2026.2학기 면접프로그램(특강) 신청 안내(~10/20 16시)}",
     "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1467403/artclView.do?layout=unknown",
@@ -1284,19 +1297,6 @@
     "action": "차량 배차를 위해서 반드시 신청 기한 안에 신청 바랍니다",
     "deadline": "2026 정컴 기업탐방(스마트엠투엠, 한국전자통신연구원) 신청 안내(일정:8.18.~19.)",
     "summary": "차량 배차를 위해서 반드시 신청 기한 안에 신청 바랍니다 / 2026 정컴 기업탐방(스마트엠투엠, 한국전자통신연구원) 신청 안내(일정:8.18.~19.)",
-    "body_loaded": true
-  },
-  {
-    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1453411/artclView.do?layout=unknown",
-    "title": "[졸업]2026년 8월 졸업.수료.유예자 명단 확인}",
-    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1453411/artclView.do?layout=unknown",
-    "published_at": "2026-08-03 14:45:52.717",
-    "relevance": "보통",
-    "reason": "1학년 제외가 명시되지 않아 안전하게 알림",
-    "target": "본문에서 명확히 찾지 못함",
-    "action": "혹시, 결과에 오류가 있는 학생은 학과사무실로 확인하시기 바랍니다.",
-    "deadline": "본문에서 명확히 찾지 못함",
-    "summary": "혹시, 결과에 오류가 있는 학생은 학과사무실로 확인하시기 바랍니다.",
     "body_loaded": true
   }
 ]

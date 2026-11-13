@@ -1,5 +1,18 @@
 [
   {
+    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1472996/artclView.do?layout=unknown",
+    "title": "SW중심대학 2026 SW인재페스티벌 참가자(참관)모집 및 경비 지원 안내 (~11.24)}",
+    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1472996/artclView.do?layout=unknown",
+    "published_at": "2026-11-13 19:17:50.783",
+    "relevance": "보통",
+    "reason": "학부생 공통 가능성: 학부생, 경진대회, 행사",
+    "target": "ㅇ 모집대상 : 부산대학교 정보컴퓨터공학부 학부생",
+    "action": "[지원 절차] 아래의 서류들을 확인 후 참가 전후에 메일로 제출 바랍니다.",
+    "deadline": "ㅇ 모집기간 : ~ 2026.11.24.(화) 18:00까지",
+    "summary": "[지원 절차] 아래의 서류들을 확인 후 참가 전후에 메일로 제출 바랍니다. / ㅇ 모집기간 : ~ 2026.11.24.(화) 18:00까지",
+    "body_loaded": true
+  },
+  {
     "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1472993/artclView.do?layout=unknown",
     "title": "[장학] 2027년 지방 국립대학 전액 장학금 안내}",
     "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1472993/artclView.do?layout=unknown",
@@ -1284,19 +1297,6 @@
     "action": "각 팀의 프로젝트를 설명하는 포스터가 아래와 같이 제작되었으며, 누구든지 깃허브(GitHub*)에 등록된 학생들의 작품을 감상한 후 마음에 드는 작품에 별 버튼을 클릭하여 투표할 수 있습니다.",
     "deadline": "8월 27일(목) 13:00부터 28일(금) 16:00까지 2일간 온라인 사전 투표",
     "summary": "각 팀의 프로젝트를 설명하는 포스터가 아래와 같이 제작되었으며, 누구든지 깃허브(GitHub*)에 등록된 학생들의 작품을 감상한 후 마음에 드는 작품에 별 버튼을 클릭하여 투표할 수 있습니다. / 8월 27일(목) 13:00부터 28일(금) 16:00까지 2일간 온라인 사전 투표",
-    "body_loaded": true
-  },
-  {
-    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1457375/artclView.do?layout=unknown",
-    "title": "[졸업요건]2026년 제26회 TOPCIT 정기평가 시행 안내_응시료지원}",
-    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1457375/artclView.do?layout=unknown",
-    "published_at": "2026-08-26 14:07:44.673",
-    "relevance": "낮음",
-    "reason": "1학년이 아닌 특정 대상만 명시된 공지",
-    "target": "※ 응시료 지원 대상(학부생에 한함): 정보컴퓨터공학부, 복수전공, 부전공, SW융합연계전공",
-    "action": "* 첨부: 응시자용 단체접수(정보등록) 매뉴얼",
-    "deadline": "2026.09.04(금) 19:00 ~ 09.09(수) 15:00까지",
-    "summary": "* 첨부: 응시자용 단체접수(정보등록) 매뉴얼 / 2026.09.04(금) 19:00 ~ 09.09(수) 15:00까지",
     "body_loaded": true
   }
 ]

@@ -1,5 +1,18 @@
 [
   {
+    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1475113/artclView.do?layout=unknown",
+    "title": "논술고사로 인한 건물 출입 통제 알림}",
+    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1475113/artclView.do?layout=unknown",
+    "published_at": "2026-11-25 17:42:22.183",
+    "relevance": "보통",
+    "reason": "학부생 공통 가능성: 모집",
+    "target": "본문에서 명확히 찾지 못함",
+    "action": "원문 확인 필요",
+    "deadline": "본문에서 명확히 찾지 못함",
+    "summary": "fnctId=bbs,fnctNo=2055",
+    "body_loaded": true
+  },
+  {
     "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1474941/artclView.do?layout=unknown",
     "title": "[수업]2026학년도 겨울 계절수업 및 도약수업 1차 폐강강좌 통보 및 수강정정 안내}",
     "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1474941/artclView.do?layout=unknown",
@@ -1284,19 +1297,6 @@
     "action": "교육혁신실에서는 우리 대학 비교과 프로그램에 적극 참여하고 지속적으로 활동하는 학생들을",
     "deadline": "본문에서 명확히 찾지 못함",
     "summary": "교육혁신실에서는 우리 대학 비교과 프로그램에 적극 참여하고 지속적으로 활동하는 학생들을",
-    "body_loaded": true
-  },
-  {
-    "id": "https://cse.pusan.ac.kr/bbs/cse/2055/1459274/artclView.do?layout=unknown",
-    "title": "2026학년도 국외현장실습학기제 참여희망학생 모집 안내}",
-    "link": "https://cse.pusan.ac.kr/bbs/cse/2055/1459274/artclView.do?layout=unknown",
-    "published_at": "2026-09-04 16:39:11.267",
-    "relevance": "높음",
-    "reason": "학사·수업 핵심 표현: 성적, 장학",
-    "target": "지원자격",
-    "action": "참여를 희망하는 학생들의 많은 지원 바랍니다.",
-    "deadline": "본문에서 명확히 찾지 못함",
-    "summary": "참여를 희망하는 학생들의 많은 지원 바랍니다.",
     "body_loaded": true
   }
 ]
